@@ -5,90 +5,258 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mike Ifiok Nkan | Backend Developer</title>
     <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f4f6f8;
+        * {
             margin: 0;
             padding: 0;
-            color: #222;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #2c3e50;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
         .container {
-            max-width: 900px;
-            margin: 40px auto;
+            max-width: 850px;
+            margin: 0 auto;
             background: #ffffff;
-            padding: 40px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 50px 60px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        h1 {
-            margin-bottom: 5px;
-            font-size: 32px;
-        }
-        h2 {
-            margin-top: 30px;
-            font-size: 20px;
-            border-bottom: 2px solid #eaeaea;
-            padding-bottom: 5px;
-        }
-        .subtitle {
-            font-size: 16px;
-            color: #555;
-            margin-bottom: 15px;
-        }
-        .contact {
-            font-size: 14px;
-            color: #444;
+
+        /* Header */
+        header {
+            border-bottom: 3px solid #2c5aa0;
+            padding-bottom: 20px;
             margin-bottom: 25px;
         }
-        .contact a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
+
+        h1 {
+            font-size: 36px;
+            color: #1a1a1a;
+            font-weight: 700;
             margin-bottom: 8px;
         }
-        .role {
-            font-weight: bold;
+
+        .subtitle {
+            font-size: 18px;
+            color: #2c5aa0;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
-        .company {
+
+        .contact {
+            font-size: 14px;
             color: #555;
-            font-size: 14px;
+            line-height: 1.8;
         }
-        .tech {
-            font-style: italic;
-            font-size: 14px;
+
+        .contact-row {
+            margin-bottom: 5px;
+        }
+
+        .contact strong {
+            color: #333;
+            font-weight: 600;
+        }
+
+        .contact a {
+            color: #2c5aa0;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
+        }
+
+        .contact a:hover {
+            border-bottom: 1px solid #2c5aa0;
+        }
+
+        /* Section Headers */
+        h2 {
+            font-size: 20px;
+            color: #2c5aa0;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e0e0e0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Content */
+        p {
+            margin-bottom: 12px;
             color: #444;
+            text-align: justify;
+        }
+
+        .role {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .company a {
+            color: #2c5aa0;
+            text-decoration: none;
+        }
+
+        .company a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        li strong {
+            color: #2c5aa0;
+            font-weight: 600;
+        }
+
+        .tech {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: #f8f9fa;
+            border-left: 3px solid #2c5aa0;
+            display: block;
+        }
+
+        /* Skills Section */
+        .skills-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .skills-list li {
+            padding-left: 0;
+            margin-bottom: 10px;
+        }
+
+        .skills-list li strong {
+            color: #2c5aa0;
+            font-weight: 600;
+            display: inline-block;
+            min-width: 180px;
+        }
+
+        /* Professional Summary */
+        .summary {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #2c5aa0;
+            margin-bottom: 10px;
+        }
+
+        .summary p {
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        /* Education & Certifications */
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        .education-item strong {
+            color: #1a1a1a;
+            font-size: 15px;
+        }
+
+        /* Spacing Adjustments */
+        .section-spacing {
+            margin-bottom: 25px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+                max-width: 100%;
+            }
+            h2 {
+                page-break-after: avoid;
+            }
+            .role {
+                page-break-after: avoid;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 25px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            .skills-list li strong {
+                display: block;
+                min-width: auto;
+                margin-bottom: 3px;
+            }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Mike Ifiok Nkan</h1>
-    <div class="subtitle">Backend Developer (Python & Node.js)</div>
-
-    <div class="contact">
-        Akwa Ibom State, Nigeria ·
-        <strong>Phone:</strong> +234-916-020-9951 ·
-        <strong>Email:</strong> mikenkan001@gmail.com ·
-        <strong>GitHub:</strong>
-        <a href="https://github.com/mikenkan001" target="_blank">github.com/mikenkan001</a>
-        <strong>Portfolio:</strong>
-        <a href="https://github.com/mikenkan001/myPortfolio/" target="_blank">github.com/mikenkan001/myPortfolio/</a>
-    </div>
+    <header>
+        <h1>Mike Ifiok Nkan</h1>
+        <div class="subtitle">Backend Developer (Python & Node.js)</div>
+        <div class="contact">
+            <div class="contact-row">
+                📍 Akwa Ibom State, Nigeria · 
+                📞 +234-916-020-9951
+            </div>
+            <div class="contact-row">
+                ✉️ mikenkan001@gmail.com · 
+                💻 <a href="https://github.com/mikenkan001" target="_blank">github.com/mikenkan001</a> · 
+                🌐 <a href="https://github.com/mikenkan001/myPortfolio/" target="_blank">Portfolio</a>
+            </div>
+        </div>
+    </header>
 
     <h2>Professional Summary</h2>
-    <p>
-        Backend-focused software developer with <strong>3+ years of experience</strong> building and shipping
-        production systems using <strong>Python and JavaScript (Node.js)</strong>.
-        Strong in <strong>API development, authentication, database design, and security-conscious backend logic</strong>.
-        Experienced in owning backend systems end-to-end, with the ability to deliver full-stack solutions when required.
-    </p>
+    <div class="summary">
+        <p>
+            Backend-focused software developer with <strong>3+ years of experience</strong> building and shipping
+            production systems using <strong>Python and JavaScript (Node.js)</strong>.
+            Strong in <strong>API development, authentication, database design, and security-conscious backend logic</strong>.
+            Experienced in owning backend systems end-to-end, with the ability to deliver full-stack solutions when required.
+        </p>
+    </div>
 
     <h2>Core Skills</h2>
-    <ul>
+    <ul class="skills-list">
         <li><strong>Backend Development:</strong> Python (FastAPI, Flask), Node.js (Express)</li>
         <li><strong>API Design:</strong> REST APIs, authentication & authorization (JWT)</li>
         <li><strong>Databases:</strong> PostgreSQL, SQLite, MySQL, MongoDB</li>
@@ -99,75 +267,75 @@
 
     <h2>Experience</h2>
 
-    <p class="role">Backend Developer / Founding Engineer</p>
-    <p class="company">
-        NexaPay —
-        <a href="https://mynexa.pages.dev" target="_blank">mynexa.pages.dev</a>
-        <br>
-        <em>(Official NexaPay product website)</em>
-    </p>
-    <ul>
-        <li>Designed and built NexaPay, a backend-driven Web3 utility platform, from scratch</li>
-        <li>Developed backend services using <strong>Python and Node.js</strong>, focusing on clean API architecture</li>
-        <li>Implemented authentication flows and encryption-aware backend logic</li>
-        <li>Designed REST APIs supporting wallet-related and developer-facing tools</li>
-        <li>Handled backend architecture, deployment, and ongoing system maintenance</li>
-        <li>Implemented frontend components where necessary to ship complete features</li>
-    </ul>
-    <p class="tech">
-        Tech: Python, Node.js, REST APIs, JWT, Encryption Concepts, PostgreSQL, HTML, CSS, JavaScript
-    </p>
+    <div class="section-spacing">
+        <p class="role">Backend Developer / Founding Engineer</p>
+        <p class="company">
+            NexaPay — <a href="https://mynexa.pages.dev" target="_blank">mynexa.pages.dev</a><br>
+            <em>(Official NexaPay product website)</em>
+        </p>
+        <ul>
+            <li>Designed and built NexaPay, a backend-driven Web3 utility platform, from scratch</li>
+            <li>Developed backend services using <strong>Python and Node.js</strong>, focusing on clean API architecture</li>
+            <li>Implemented authentication flows and encryption-aware backend logic</li>
+            <li>Designed REST APIs supporting wallet-related and developer-facing tools</li>
+            <li>Handled backend architecture, deployment, and ongoing system maintenance</li>
+            <li>Implemented frontend components where necessary to ship complete features</li>
+        </ul>
+        <span class="tech">
+            Tech: Python, Node.js, REST APIs, JWT, Encryption Concepts, PostgreSQL, HTML, CSS, JavaScript
+        </span>
+    </div>
 
-    <br>
+    <div class="section-spacing">
+        <p class="role">Backend Developer (Team Project)</p>
+        <p class="company">Joblynk — Remote (Jan 2025 – Mar 2025)</p>
+        <ul>
+            <li>Developed backend APIs for user registration using <strong>Python (Flask)</strong></li>
+            <li>Designed and managed application data with SQLite</li>
+            <li>Collaborated with a remote Agile team on backend features</li>
+            <li>Improved API reliability and data handling through structured backend logic</li>
+        </ul>
+    </div>
 
-    <p class="role">Backend Developer (Team Project)</p>
-    <p class="company">Joblynk — Remote (Jan 2025 – Mar 2025)</p>
-    <ul>
-        <li>Developed backend APIs for user registration using <strong>Python (Flask)</strong></li>
-        <li>Designed and managed application data with SQLite</li>
-        <li>Collaborated with a remote Agile team on backend features</li>
-        <li>Improved API reliability and data handling through structured backend logic</li>
-    </ul>
-
-    <br>
-
-    <p class="role">Web Developer</p>
-    <p class="company">
-        El Hakavod —
-        <a href="https://elhakavod.org" target="_blank">elhakavod.org</a>
-    </p>
-    <ul>
-        <li>Built and deployed a production-ready static website using HTML, CSS, and JavaScript</li>
-        <li>Implemented responsive layouts and clean page structure</li>
-        <li>Managed hosting, deployment, and content updates</li>
-    </ul>
+    <div class="section-spacing">
+        <p class="role">Web Developer</p>
+        <p class="company">
+            El Hakavod — <a href="https://elhakavod.org" target="_blank">elhakavod.org</a>
+        </p>
+        <ul>
+            <li>Built and deployed a production-ready static website using HTML, CSS, and JavaScript</li>
+            <li>Implemented responsive layouts and clean page structure</li>
+            <li>Managed hosting, deployment, and content updates</li>
+        </ul>
+    </div>
 
     <h2>Projects</h2>
 
-    <p class="role">Multi-Tenant SaaS Backend API</p>
-    <p class="company">
-        GitHub —
-        <a href="https://github.com/mikenkan001/Multi_Tenants-SaaS-Dashboard/" target="_blank">
-            github.com/mikenkan001/Multi_Tenants-SaaS-Dashboard
-        </a>
-    </p>
-    <ul>
-        <li>Built a production-style backend API supporting multiple organizations (tenants)</li>
-        <li>Implemented JWT-based authentication and role-based access control</li>
-        <li>Enforced strict tenant-level data isolation via middleware</li>
-        <li>Designed normalized database schemas for users, organizations, and resources</li>
-        <li>Documented APIs using Swagger and deployed using a free cloud hosting tier</li>
-    </ul>
-    <p class="tech">
-        Tech: Node.js, Express, PostgreSQL, JWT, REST APIs, Swagger
-    </p>
+    <div class="section-spacing">
+        <p class="role">Multi-Tenant SaaS Backend API</p>
+        <p class="company">
+            GitHub — <a href="https://github.com/mikenkan001/Multi_Tenants-SaaS-Dashboard/" target="_blank">
+                github.com/mikenkan001/Multi_Tenants-SaaS-Dashboard
+            </a>
+        </p>
+        <ul>
+            <li>Built a production-style backend API supporting multiple organizations (tenants)</li>
+            <li>Implemented JWT-based authentication and role-based access control</li>
+            <li>Enforced strict tenant-level data isolation via middleware</li>
+            <li>Designed normalized database schemas for users, organizations, and resources</li>
+            <li>Documented APIs using Swagger and deployed using a free cloud hosting tier</li>
+        </ul>
+        <span class="tech">
+            Tech: Node.js, Express, PostgreSQL, JWT, REST APIs, Swagger
+        </span>
+    </div>
 
     <h2>Education</h2>
-    <p>
+    <div class="education-item">
         <strong>B.Sc. Computer Science (In Progress)</strong><br>
         University of Uyo, Akwa Ibom State, Nigeria<br>
         2023 – 2027 (Expected)
-    </p>
+    </div>
 
     <h2>Certifications</h2>
     <ul>
