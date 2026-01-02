@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mike Ifiok Nkan | Backend Developer Portfolio</title>
+    <!-- Add html2pdf library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -237,6 +239,8 @@
             box-shadow: 0 10px 40px rgba(37, 99, 235, 0.4);
             transition: all 0.3s ease;
             animation: fadeInUp 1s ease-out 0.6s both;
+            cursor: pointer;
+            border: none;
         }
 
         .cta-button:hover {
@@ -501,6 +505,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             border: 1px solid #e2e8f0;
             transition: all 0.3s ease;
+            margin-bottom: 30px;
         }
 
         .project-card:hover {
@@ -820,7 +825,7 @@
                 </div>
             </div>
 
-            <a href="Mike_Ifiok_Nkan_CV.pdf" target="_blank" class="cta-button">View CV</a>
+            <button id="downloadPdf" class="cta-button">Download CV as PDF</button>
 
             <div class="summary-box">
                 <p>
@@ -888,6 +893,7 @@
                         <li>Swagger</li>
                         <li>Agile</li>
                         <li>Environment Config</li>
+                        <li>Excel & Apps Script</li>
                     </ul>
                 </div>
             </div>
@@ -955,6 +961,31 @@
             <div class="experience-card">
                 <div class="experience-header">
                     <div class="experience-title">
+                        <h3>Data Entry Specialist</h3>
+                        <div class="company-name">NFWP</div>
+                    </div>
+                    <div class="period-badge">2023 - 2024</div>
+                </div>
+
+                <ul>
+                    <li>Performed extensive data entry and management operations using Microsoft Excel</li>
+                    <li>Utilized Google Apps Script to automate and optimize large-scale Excel operations</li>
+                    <li>Created custom scripts to perform complex data transformations and validations</li>
+                    <li>Improved data processing efficiency by implementing automated workflows</li>
+                    <li>Managed large datasets with high accuracy and attention to detail</li>
+                </ul>
+
+                <div class="tech-tags">
+                    <span class="tech-tag">Microsoft Excel</span>
+                    <span class="tech-tag">Google Apps Script</span>
+                    <span class="tech-tag">Data Management</span>
+                    <span class="tech-tag">Automation</span>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="experience-title">
                         <h3>Web Developer</h3>
                         <div class="company-name">El Hakavod</div>
                         <a href="https://elhakavod.org" target="_blank" class="company-link">elhakavod.org</a>
@@ -986,6 +1017,99 @@
             <div class="project-card">
                 <div class="project-header">
                     <div class="project-title">
+                        <h3>Multi-Tenant SaaS Backend in Python</h3>
+                        <p class="project-description">
+                            A robust multi-tenant backend system built with Python (Flask/FastAPI) supporting data isolation, authentication, and scalable architecture for SaaS applications.
+                        </p>
+                    </div>
+                    <a href="https://github.com/mikenkan001/Multi_Tenant-vPython/" target="_blank" class="github-button">
+                        View Code
+                    </a>
+                </div>
+
+                <ul>
+                    <li>Built a production-ready multi-tenant backend API supporting multiple organizations</li>
+                    <li>Implemented tenant-level data isolation and security using middleware</li>
+                    <li>Designed scalable database architecture with proper tenant separation</li>
+                    <li>Created comprehensive authentication and authorization systems</li>
+                    <li>Developed admin dashboard for tenant management and monitoring</li>
+                </ul>
+
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Flask/FastAPI</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">JWT</span>
+                    <span class="tech-tag">Multi-tenant</span>
+                    <span class="tech-tag">SaaS</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">
+                        <h3>Crypto Swapping Bot with Python</h3>
+                        <p class="project-description">
+                            A Flask-based web application for automated token swapping on Ethereum and Base networks with scheduled execution capabilities.
+                        </p>
+                    </div>
+                    <a href="https://github.com/mikenkan001/Token_Swap_Bot" target="_blank" class="github-button">
+                        View Code
+                    </a>
+                </div>
+
+                <ul>
+                    <li>Developed a Web3 trading bot with scheduled transaction execution for Ethereum and Base networks</li>
+                    <li>Implemented secure private key handling with optional persistent storage for scheduled trades</li>
+                    <li>Built real-time trade estimation with slippage protection and balance validation</li> 
+                    <li>Designed thread-safe trade queuing system with automated execution monitoring</li>
+                    <li>Created comprehensive web interface with trade history, transaction tracking, and network explorer</li>
+                </ul>
+
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">Web3.py</span>
+                    <span class="tech-tag">Ethereum</span>
+                    <span class="tech-tag">Blockchain</span>
+                    <span class="tech-tag">HTML/CSS/JS</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">
+                        <h3>Bitcoin & Ethereum Trading Bot</h3>
+                        <p class="project-description">
+                            Automated trading system for BTC and ETH with technical indicators, volume analysis, and Telegram notifications.
+                        </p>
+                    </div>
+                    <a href="https://github.com/mikenkan001/BTC-ETH-Trading-Bot/" target="_blank" class="github-button">
+                        View Code
+                    </a>
+                </div>
+
+                <ul>
+                    <li>Built automated trading system for Bitcoin and Ethereum using MetaTrader5 API</li>
+                    <li>Implemented multi-timeframe analysis with EMA, MACD, RSI, and volume indicators</li>
+                    <li>Created Telegram bot integration for real-time trade alerts and notifications</li>
+                    <li>Developed risk management with stop-loss, take-profit, and daily loss limits</li>
+                    <li>Added trade monitoring with break-even adjustments and position management</li>
+                </ul>
+
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">MetaTrader5</span>
+                    <span class="tech-tag">TA-Lib</span>
+                    <span class="tech-tag">Telegram Bot</span>
+                    <span class="tech-tag">Trading</span>
+                    <span class="tech-tag">Risk Management</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">
                         <h3>Multi-Tenant SaaS Backend API</h3>
                         <p class="project-description">
                             Production-style backend API supporting multiple organizations (tenants) with strict tenant-level data isolation
@@ -1012,35 +1136,6 @@
                     <span class="tech-tag">Swagger</span>
                 </div>
             </div>
-
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="project-title">
-                        <h3>Token Swap Bot</h3>
-                        <p class="project-description">
-                            Swap Token Bot is a web application that lets you automatically trade Ethereum for other tokens. It's built with Flask and uses Web3 to interact with blockchain networks.</p>
-                    </div>
-                    <a href="https://github.com/mikenkan001/Token_Swap_Bot/" target="_blank" class="github-button">
-                        View Code
-                    </a>
-                </div>
-
-                <ul>
-                    <li>Developed a Web3 trading bot with scheduled transaction execution for Ethereum and Base networks</li>
-                    <li>Implemented secure private key handling with optional persistent storage for scheduled trades</li>
-                    <li>Built real-time trade estimation with slippage protection and balance validation</li> 
-                    <li>Designed thread-safe trade queuing system with automated execution monitoring</li>
-                    <li>free comprehensive web interface with trade history, transaction tracking, and network explorer</li>
-                    
-                </ul>
-
-                <div class="tech-tags">
-                    <span class="tech-tag">Flask</span>
-                    <span class="tech-ttech-tagan>
-                    <span class="tech-tag">ass="</span>
-                    <span class="tech-tag">Jinja2 templates</span>             
-                    <span class="tech-tag">HTML/CSS/JAVASCRIPT</span>
-            </div>
         </section>
 
         <!-- Education & Certifications -->
@@ -1062,7 +1157,7 @@
             <div>
                 <div class="section-header">
                     <div class="section-line"></div>
-                    <h2 class="section-title">Certifications</h2>
+                    <2 class="section-title">Certifications</h2>
                 </div>
                 <div class="info-card">
                     <ul class="cert-list">
@@ -1085,7 +1180,7 @@
             </div>
             <div class="cta-buttons">
                 <a href="mailto:mikenkan001@gmail.com" class="cta-button-white">✉️ Get in Touch</a>
-                <a href="Mike_Ifiok_Nkan_CV.pdf" target="_blank" class="cta-button">⬇️ Download CV</a>
+                <button id="downloadPdf2" class="cta-button">⬇️ Download CV</button>
             </div>
         </section>
     </div>
@@ -1128,6 +1223,53 @@
             section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(section);
         });
+
+        // PDF Download Functionality
+        function downloadPDF() {
+            // Create loading indicator
+            const loadingDiv = document.createElement('div');
+            loadingDiv.innerHTML = '<div style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(255,255,255,0.9);z-index:9999;display:flex;flex-direction:column;justify-content:center;align-items:center;font-size:24px;color:#2563eb;"><div class="spinner" style="width:50px;height:50px;border:5px solid #f3f3f3;border-top:5px solid #2563eb;border-radius:50%;animation:spin 1s linear infinite;margin-bottom:20px;"></div><p>Generating PDF...</p></div>';
+            loadingDiv.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;background:rgba(255,255,255,0.9);display:flex;flex-direction:column;justify-content:center;align-items:center;font-size:24px;color:#2563eb;';
+            
+            // Add spinner animation
+            const style = document.createElement('style');
+            style.textContent = '@keyframes spin {0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);}}';
+            document.head.appendChild(style);
+            
+            document.body.appendChild(loadingDiv);
+
+            // Configure PDF options
+            const element = document.body;
+            const opt = {
+                margin:       10,
+                filename:     'Mike_Ifiok_Nkan_CV.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { 
+                    scale: 2,
+                    useCORS: true,
+                    scrollY: -window.scrollY,
+                    windowWidth: document.documentElement.offsetWidth,
+                    windowHeight: document.documentElement.offsetHeight
+                },
+                jsPDF:        { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait',
+                    compress: true
+                }
+            };
+
+            // Generate PDF
+            html2pdf().set(opt).from(element).toPdf().get('pdf').then(function(pdf) {
+                // Remove loading indicator
+                document.body.removeChild(loadingDiv);
+                document.head.removeChild(style);
+            }).save();
+        }
+
+        // Add event listeners to both download buttons
+        document.getElementById('downloadPdf').addEventListener('click', downloadPDF);
+        document.getElementById('downloadPdf2').addEventListener('click', downloadPDF);
     </script>
 </body>
 </html>
